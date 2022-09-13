@@ -1,4 +1,4 @@
-from .Generalresponse import sales
+from .CRUDresponse import sales
 from flask_cors import CORS
 from .config import Config
 from flask import Flask
