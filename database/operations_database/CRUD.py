@@ -1,9 +1,9 @@
-from database.operations_database.Retrieve.inquiere import Retrieve
-from database.operations_database.Update.replace import Update
-from database.operations_database.Create.insert import Create
-from database.operations_database.Drop.delete import Drop
-from models.operation_model.selectModel import GetModels
-from configuration.connection.conexionDB import Connect
+from BackEscuelita.database.operations_database.Retrieve.inquiere import Retrieve
+from BackEscuelita.database.operations_database.Update.replace import Update
+from BackEscuelita.database.operations_database.Create.insert import Create
+from BackEscuelita.database.operations_database.Drop.delete import Drop
+from BackEscuelita.models.operation_model.selectModel import GetModels
+from BackEscuelita.configuration.connection.conexionDB import Connect
 
 
 class MethodsDatabase(Retrieve, Create, Drop, Update, Connect, GetModels):
@@ -14,7 +14,7 @@ class MethodsDatabase(Retrieve, Create, Drop, Update, Connect, GetModels):
         # DATOS DE LA CONEXIÓN A LA BASE DE DATOS
         self.serverName = 'DESKTOP-8BFSMKJ'
         self.instanceName = ''
-        self.databaseName = 'prueba'
+        self.databaseName = 'HSE_PROYECT_INCIDEN'
 
         # herencia para conexión a la base de datos
         Connect.__init__(self, self.serverName, self.instanceName, self.databaseName)

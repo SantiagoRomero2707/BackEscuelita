@@ -1,4 +1,4 @@
-from database.operations_database.Retrieve.inquiere import Retrieve
+from BackEscuelita.database.operations_database.Retrieve.inquiere import Retrieve
 
 
 class Update(object):
@@ -10,7 +10,7 @@ class Update(object):
 
     def update_data(self):
         print(f'builder query{self.builder_query}')
-        print (f'instance {self.instance_from_db}')
+        print(f'instance {self.instance_from_db}')
         print (f'data_update: {self.data_update}')
         print(f'data updates it´s works :D')
         if not self.data_update:

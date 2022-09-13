@@ -1,5 +1,4 @@
-from API.routes import start_program
-
+from ControllerAPI.Services import create_app
 # Pequeño testing de datos para el sistema.
 
 # BUILD FUNCTION IN THE FUTURE
@@ -21,7 +20,7 @@ data = {
     'identification': '10000'
 }
 
-# Action from API
+# Action from ControllerAPI
 action_user = {
     'info_user': info_user,
     'crud_information':
@@ -30,7 +29,7 @@ action_user = {
             'model_mapped': 0,
             'id_record_database': 11,
             'request_data': data
-         }
+        }
 }
 
 # Instances_crud = MethodsDatabase(**action_user)
@@ -38,6 +37,7 @@ action_user = {
 # Funcionalidad del template junto con el el método http
 # Instances_Template = Template(**action_user)
 # print(Instances_Template)
+app = create_app()
 
-if __name__ == "__main__":
-    start_program()
+if __name__ == '__main__':
+    app.run("0.0.0.0", debug=True)
