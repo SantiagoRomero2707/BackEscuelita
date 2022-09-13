@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>primerTemplate</title>
+        <script src="https://kit.fontawesome.com/c5d8d969cf.js" crossorigin="anonymous"></script>
+        <link href="../static/assets/img/favicon.ico" rel="shortcut icon">
+    </head>
+
+    <body>
+        <p>Su contador inicial es : {{contador}} y el type : {{type}}</p>
+        <p>mi data es {{data}}</p>
+
+            <form action="{{url_for('validateInputData', counter=contador, type=type )}}" method="post" name="formulario1">
+                <table>
+                    {% for x in Form %}
+                        <tr><td>{{x.label}}</td></tr>
+                            <tr>
+                                <td>
+                                    {{x}}
+                                    <button  type="submit" name="querydata" value=" {{x.id }} " class="link-button">
+                                        <i class="fas fa-question"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                </table>
+                    <button type="submit" name="Insert" value="Insertar">Enviar directo</button>
+            </form>
+    </body>
+</html>
