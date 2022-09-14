@@ -1,12 +1,11 @@
 from ControllerAPI.Services import create_app
-# Pequeño testing de datos para el sistema.
+from HandlerData import CRUD
 
 app = create_app()
 
-if __name__ == '__main__':
-    app.run("0.0.0.0", debug=True)
+# if __name__ == '__main__':
+    # app.run("0.0.0.0", debug=True)
 
-from HandlerData import CRUD
 # BUILD FUNCTION IN THE FUTURE
 info_user = {
     'user_name_login': 'Santiago Romero',
@@ -18,10 +17,7 @@ info_user = {
 }
 
 # CRUD Data (model)
-data ={
-    'Nom_OPERAC': 'Hola'
-}
-
+data = {'ID_ASEGURADORA': 'A-3344', 'Nom_Aseguradora': 'PRUEBA'}
 # Action from ControllerAPI
 action_user = {
     'info_user': info_user,
@@ -33,14 +29,13 @@ action_user = {
             'request_data': data
         }
 }
-# pprint(action_user)
-# instaces_crud = CRUD.MethodsDatabase(**action_user)
-# instaces_crud.methods_http()
+
+instances_crud = CRUD.MethodsDatabase(**action_user)
+instances_crud.methods_http()
+
 
 # Instances_crud = MethodsDatabase(**action_user)
 # print(Instances_crud)
 # Funcionalidad del template junto con el el método http
 # Instances_Template = Template(**action_user)
 # print(Instances_Template)
-
-

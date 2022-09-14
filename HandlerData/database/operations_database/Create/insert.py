@@ -9,8 +9,6 @@ class Create(object):
         """ Create """
         # Insert Data
         print(self.model_db, self.instance_model)
-
-        instances_object = self.model_db(**{'Nom_OPERAC': 'Santiago'})
         instances_object = self.model_db(**self.instance_model)
         self.object_connection.add(instances_object)
         self.object_connection.commit()
