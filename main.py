@@ -1,10 +1,10 @@
 from ControllerAPI.Services import create_app
-from HandlerData import CRUD
+# from HandlerData import CRUD
 
 app = create_app()
 
-# if __name__ == '__main__':
-    # app.run("0.0.0.0", debug=True)
+if __name__ == '__main__':
+    app.run("0.0.0.0", debug=True)
 
 # BUILD FUNCTION IN THE FUTURE
 info_user = {
@@ -30,8 +30,8 @@ action_user = {
         }
 }
 
-instances_crud = CRUD.MethodsDatabase(**action_user)
-instances_crud.methods_http()
+# instances_crud = CRUD.MethodsDatabase(**action_user)
+# instances_crud.methods_http()
 
 
 # Instances_crud = MethodsDatabase(**action_user)
@@ -39,3 +39,7 @@ instances_crud.methods_http()
 # Funcionalidad del template junto con el el método http
 # Instances_Template = Template(**action_user)
 # print(Instances_Template)
+
+# https://www.datos.gov.co/Salud-y-Protecci-n-Social/Listado-de-IPS-en-Colombia-seg-n-su-nivel-de-compl/ugc5-acjp/data
+# https://datos.gov.co/Salud-y-Protecci-n-Social/C-DIGO-NICO-DE-MEDICAMENTOS-VIGENTES/i7cb-raxc/data
+# https://apitude.co/es/docs/services/registraduria-co/

@@ -1,0 +1,20 @@
+{
+   "result": {
+      "data": {
+         "area": "BOLIVAR",
+         "city": "CARTAGENA",
+         "name": "JUAN PEREZ",
+         "status": "VIGENTE",
+         "resolution": "",
+         "date_resolution": "2020-05-30"
+      },
+      "error": "",
+      "end_at": "2020-05-30 21:54:06.453355",
+      "status": 200,
+      "message": "successful",
+      "queried_by": "YOUR-USER",
+      "service_name": "registraduria-co"
+   },
+   "message": "Request completed"
+}
+    
