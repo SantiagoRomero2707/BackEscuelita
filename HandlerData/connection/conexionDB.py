@@ -17,16 +17,16 @@ class Connect(object):
     # Método de Conexión a las bases de datos
     def connecting(self):
         # INSTRUCCIÓN DE CONEXION BASE DE DATOS SQLALCHEMY
-        MSSQL_engine = create_engine('mssql+pyodbc://' + self.serverName + "\\" + self.instanceName + '/' +
-                                     self.databaseName + '?driver=SQL+Server+Native+Client+11.0')
+        ## MSSQL_engine = create_engine('mssql+pyodbc://' + self.serverName + "\\" + self.instanceName + '/' +
+                                     ## self.databaseName + '?driver=SQL+Server+Native+Client+11.0')
+        MYSQL_engine = create_engine('mysql+pymysql://root:12345@localhost/entidades_registradas')
         # CREA HILO DE CONEXIÓN A BASE DE DATOS SEGÚN URL ESTABLECIDA
-        session_factory = sessionmaker(autocommit=False, autoflush=False, bind=MSSQL_engine)
+        session_factory = sessionmaker(autocommit=False, autoflush=False, bind=MYSQL_engine)
         # CONSTRUCTOR DE LA SESIÓN ACTUAL EN EL ESPACIO DE MEMORIA DEL SERVIDOR
         session = scoped_session(session_factory)
         try:
             # RETORNA CONSTRUCTOR CON LOS PARAMETROS ESTABLECIDOS DE LA CONEXIÓN, HILO Y LA SESIÓN DE LA BASE DE DATOS
-            MSSQL_engine.connect()
-            print("Connection successful")
+            MYSQL_engine.connect()
             return session()
         except Exception as e:
             return print(e)

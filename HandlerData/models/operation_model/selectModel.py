@@ -1,5 +1,4 @@
 from ..base_models.base import MappingAbstract
-from flask.globals import request
 
 
 class GetModels(object):

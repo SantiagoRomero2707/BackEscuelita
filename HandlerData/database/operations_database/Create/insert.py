@@ -8,7 +8,7 @@ class Create(object):
     def insert_data(self):
         """ Create """
         # Insert Data
-        print(self.model_db, self.instance_model)
+        # print(self.model_db, self.instance_model)
         instances_object = self.model_db(**self.instance_model)
         self.object_connection.add(instances_object)
         self.object_connection.commit()

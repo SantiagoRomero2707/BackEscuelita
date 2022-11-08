@@ -10,14 +10,6 @@ class MethodsDatabase(Retrieve, Create, Drop, Update, Connect, GetModels):
     def __init__(self, **kwargs):
         self.attrib_all = kwargs
 
-        # VALILDADOR CREAR OTRA CLASE PARA UNA VERSIÓN MEJORADA DESDE LINEA 14 HASTA 41
-        # DATOS DE LA CONEXIÓN A LA BASE DE DATOS
-        self.serverName = 'DESKTOP-3QOJ6G2'
-        self.instanceName = ''
-        self.databaseName = 'HSE_PROYECT_INCIDEN'
-
-        # herencia para conexión a la base de datos
-        Connect.__init__(self, self.serverName, self.instanceName, self.databaseName)
 
         # objeto conexion a la base de datos
         self.object_connection = self.connecting()
@@ -29,12 +21,10 @@ class MethodsDatabase(Retrieve, Create, Drop, Update, Connect, GetModels):
                 self.method_http = value
             elif key == 'model_mapped':
                 self.id_model_database = value
-            elif key == 'id_record_database':
-                self.id_record_database = value
-                if self.id_record_database is None:
-                    self.id_record_database = 100000000
             elif key == 'request_data':
                 self.instances_model = value
+            elif key == 'id_record_database':
+                self.id_record_database = value
 
         # Obtener modelo base de datos
         GetModels.__init__(self, self.id_model_database)
@@ -59,17 +49,20 @@ class MethodsDatabase(Retrieve, Create, Drop, Update, Connect, GetModels):
                f'\n {self.method_http}' \
                f'\n {self.id_record_database}'
 
-    def methods_http(self):
-        if self.method_http == 'GET':
+    def methods_graphql(self):
+        if self.method_http == 'Query_Filter':
             data_single = self.record_by_id()
-            return f'Okey {data_single}'
-        elif self.method_http == 'DELETE':
+            return data_single
+        elif self.method_http == 'Query':
+            all_records = self.retrieve_all_records()
+            return all_records
+        elif self.method_http == 'Mutation-Drop':
             drop_data = self.drop_data()
             return f'Okey {drop_data}'
-        elif self.method_http == 'POST':
+        elif self.method_http == 'Mutation-Create':
             create_data = self.insert_data()
             return f'Okey {create_data}'
-        elif self.method_http == 'PUT':
+        elif self.method_http == 'Mutation-Update':
             update_record = self.update_data()
             return f'Okey {update_record}'
         else:
