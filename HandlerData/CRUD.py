@@ -10,7 +10,6 @@ class MethodsDatabase(Retrieve, Create, Drop, Update, Connect, GetModels):
     def __init__(self, **kwargs):
         self.attrib_all = kwargs
 
-
         # objeto conexion a la base de datos
         self.object_connection = self.connecting()
 

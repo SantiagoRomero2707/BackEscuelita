@@ -1,5 +1,5 @@
-from ControllerGraphQL.routes_mutation import Mutation
-from ControllerGraphQL.routes_query import Query
+from ControllerGraphQL.Entity.routes_mutation import Mutation
+from ControllerGraphQL.Entity.routes_query import Query
 from strawberry.asgi import GraphQL
 from fastapi import FastAPI
 import strawberry

@@ -4,8 +4,6 @@ from sqlalchemy.orm import relationship
 
 
 # CLASE REFERENCIA PARA LOS MODELOS CREADOS
-
-
 class Model(object):
     pass
 
@@ -92,7 +90,7 @@ class Servicio(Model):  # 6
     tarifa = Column(Float)
 
 
-class EpsFarmacia(Model): # 7
+class EpsFarmacia(Model):  # 7
     __tablename__ = 'eps_farmacia'
 
     ID_EPS_Farmacia = Column(Integer, primary_key=True)
