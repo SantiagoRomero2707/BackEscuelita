@@ -7,7 +7,7 @@ import typing
 @strawberry.type
 class MedicoHorarioQuery:
     @strawberry.field
-    def filter_medico(self, id: int) -> typing.Optional[MedicoHorario]:
+    def filter_medico_horario(self, id: int) -> typing.Optional[MedicoHorario]:
         try:
             action_user = {
                 'crud_information':
@@ -29,7 +29,7 @@ class MedicoHorarioQuery:
             return e
 
     @strawberry.field
-    def get_medico(self) -> typing.List[MedicoHorario]:
+    def get_medico_horario(self) -> typing.List[MedicoHorario]:
         try:
             action_user = {
                 'crud_information':

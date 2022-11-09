@@ -7,7 +7,7 @@ import typing
 @strawberry.type
 class EPSIPSQuery:
     @strawberry.field
-    def filter_eps_ips(self, id: int) -> typing.Optional[EPSIPS]:
+    def filter_eps_ips(self, id: str) -> typing.Optional[EPSIPS]:
         try:
             action_user = {
                 'crud_information':

@@ -1,5 +1,6 @@
 from ControllerGraphQL.Entity.MEDICO_HORARIO.actions_graph.mutation import MutationMedicoHorario
 from ControllerGraphQL.Entity.EPS_FARMACIA.actions_graph.mutation import MutationEPSFarmacia
+from ControllerGraphQL.Entity.IPS_SERVICIO.actions_graph.mutation import MutationIPSServicio
 from ControllerGraphQL.Entity.IPS_JORNADA.actions_graph.mutation import MutationIPSJornada
 from ControllerGraphQL.Entity.AFILIADOS.actions_graph.mutation import MutationAfiliados
 from ControllerGraphQL.Entity.SERVICIO.actions_graph.mutation import MutationServicio
@@ -14,5 +15,5 @@ import strawberry
 
 
 @strawberry.type
-class Mutation(MutationMedicoHorario, MutationIPSJornada, MutationJornada, EPSIPSMutation, MutationMedico, EPSMutation, MutationFarmacia, MutationHorario, MutationIPS, MutationEPSFarmacia, MutationServicio, MutationAfiliados):
+class Mutation(MutationMedicoHorario, MutationIPSJornada, MutationJornada, MutationIPSServicio, EPSIPSMutation, MutationMedico, EPSMutation, MutationFarmacia, MutationHorario, MutationIPS, MutationEPSFarmacia, MutationServicio, MutationAfiliados):
     pass

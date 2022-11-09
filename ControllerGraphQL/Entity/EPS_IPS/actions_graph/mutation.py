@@ -16,7 +16,7 @@ class EPSIPSMutation:
             'crud_information':
                 {
                     'method_http': 'Mutation-Create',
-                    'model_mapped': 0,
+                    'model_mapped': 8,
                     'id_record_database': 0,
                     'request_data': eps_ips
                 }
@@ -26,7 +26,7 @@ class EPSIPSMutation:
         return "Create successful"
 
     @strawberry.mutation
-    def delete_eps_ips(self, id_record: int) -> str:
+    def delete_eps_ips(self, id_record: str) -> str:
         action_user = {
             'crud_information':
                 {
@@ -41,7 +41,7 @@ class EPSIPSMutation:
         return "Row drop successful"
 
     @strawberry.mutation
-    def update_eps_ips(self, EPS_IPS: EPSIPSInput, id_record: int) -> str:
+    def update_eps_ips(self, EPS_IPS: EPSIPSInput, id_record: str) -> str:
         request = {
             "EPS_IPS_PK": EPS_IPS.EPS_IPS_PK,
             "EPS_ID": EPS_IPS.EPS_ID,

@@ -10,7 +10,7 @@ class MutationIPSJornada:
         try:
             IPSJornada = {
                 "IPS_Jornada_ID": IPSJornada.IPS_Jornada_ID,
-                "IPS_ID": IPSJornada.IPS_ID
+                "Jornada_ID_FK": IPSJornada.Jornada_ID_FK
             }
             action_user = {
                 'crud_information':
@@ -50,7 +50,7 @@ class MutationIPSJornada:
         try:
             request = {
                 "IPS_Jornada_ID": IPSJornada.IPS_Jornada_ID,
-                "IPS_ID": IPSJornada.IPS_ID
+                "Jornada_ID_FK": IPSJornada.Jornada_ID_FK
             }
             IPSJornada = {}
             for key, value in request.items():
@@ -63,7 +63,7 @@ class MutationIPSJornada:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Update',
-                        'model_mapped': 10,
+                        'model_mapped': 9,
                         'id_record_database': id_record,
                         'request_data': IPSJornada
                     }

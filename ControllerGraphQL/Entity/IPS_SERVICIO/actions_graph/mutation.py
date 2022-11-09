@@ -4,7 +4,7 @@ import strawberry
 
 
 @strawberry.type
-class MutationServicio:
+class MutationIPSServicio:
     @strawberry.mutation
     def create_ips_servicio(self, IPSServicio: IPSServicioInput) -> str:
         try:
@@ -29,7 +29,7 @@ class MutationServicio:
             return e
 
     @strawberry.mutation
-    def delete_ips_servicio(self, id_record: int) -> str:
+    def delete_ips_servicio(self, id_record: str) -> str:
         try:
             action_user = {
                 'crud_information':
@@ -47,7 +47,7 @@ class MutationServicio:
             return e
 
     @strawberry.mutation
-    def update_servicio(self,  IPSServicio: IPSServicioInput, id_record: int) -> str:
+    def update_ips_servicio(self,  IPSServicio: IPSServicioInput, id_record: str) -> str:
         try:
             request = {
                 "IPS_Servicio_PK": IPSServicio.IPS_Servicio_PK,

@@ -7,7 +7,7 @@ import typing
 @strawberry.type
 class IPSServicioQuery:
     @strawberry.field
-    def filter_ips_servicio(self, id: int) -> typing.Optional[IPSServicio]:
+    def filter_ips_servicio(self, id: str) -> typing.Optional[IPSServicio]:
         try:
             action_user = {
                 'crud_information':

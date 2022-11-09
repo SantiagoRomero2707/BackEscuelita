@@ -22,7 +22,8 @@ class MedicoQuery:
             response = instances_crud.methods_graphql()
             object_response = response.__dict__
             return Medico(
-                nombre_medico=object_response["nombre_afiliados"],
+                id=object_response["id"],
+                nombre_medico=object_response["nombre_medico"],
                 apellidos_medico=object_response["apellidos_medico"],
                 licencia=object_response["licencia"],
                 especialidad=object_response["especialidad"],
@@ -47,7 +48,8 @@ class MedicoQuery:
             }
             instances_crud = CRUD.MethodsDatabase(**action_user)
             object_response = instances_crud.methods_graphql()
-            return [Medico(nombre_medico=value.__dict__["nombre_afiliados"],
+            return [Medico(id=value.__dict__["id"],
+                           nombre_medico=value.__dict__["nombre_medico"],
                            apellidos_medico=value.__dict__["apellidos_medico"],
                            licencia=value.__dict__["licencia"],
                            especialidad=value.__dict__["especialidad"],

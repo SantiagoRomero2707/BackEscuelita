@@ -45,17 +45,17 @@ class MutationMedicoHorario:
             return e
 
     @strawberry.mutation
-    def update_medico(self, MedicoHorario: MedicoHorarioInput, id_record: int) -> str:
-        request = {
-            "Medico_Horario_PK": MedicoHorario.Medico_Horario_PK,
-            "Horario_id_fk": MedicoHorario.Horario_id_fk}
+    def update_medico_horario(self, MedicoHorario: MedicoHorarioInput, id_record: int) -> str:
         try:
-            MedicoHorario = {}
+            request = {
+                "Medico_Horario_PK": MedicoHorario.Medico_Horario_PK,
+                "Horario_id_fk": MedicoHorario.Horario_id_fk}
+            medicoHorario = {}
             for key, value in request.items():
                 if value == "NULL" or value == 0:
                     continue
                 else:
-                    MedicoHorario[key] = value
+                    medicoHorario[key] = value
 
             action_user = {
                 'crud_information':
@@ -63,7 +63,7 @@ class MutationMedicoHorario:
                         'method_http': 'Mutation-Update',
                         'model_mapped': 12,
                         'id_record_database': id_record,
-                        'request_data': MedicoHorario
+                        'request_data': medicoHorario
                     }
             }
             instances_crud = CRUD.MethodsDatabase(**action_user)
