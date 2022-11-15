@@ -13,7 +13,7 @@ class MedicoHorarioQuery:
                 'crud_information':
                     {
                         'method_http': 'Query_Filter',
-                        'model_mapped': 12,
+                        'model_mapped': 11,
                         'id_record_database': id,
                         'request_data': "eps"
                     }
@@ -35,7 +35,7 @@ class MedicoHorarioQuery:
                 'crud_information':
                     {
                         'method_http': 'Query',
-                        'model_mapped': 12,
+                        'model_mapped': 11,
                         'id_record_database': id,
                         'request_data': "eps"
                     }

@@ -9,14 +9,16 @@ class MutationIPSJornada:
     def create_ips_jornada(self, IPSJornada: IPSJornadaInput) -> str:
         try:
             IPSJornada = {
-                "IPS_Jornada_ID": IPSJornada.IPS_Jornada_ID,
-                "Jornada_ID_FK": IPSJornada.Jornada_ID_FK
+
+                "IPS_ID_FK": IPSJornada.IPS_ID_FK,
+                "Jornada_ID_FK": IPSJornada.Jornada_ID_FK,
+                "ips_jornadacol": IPSJornada.ips_jornadacol
             }
             action_user = {
                 'crud_information':
                     {
                         'method_http': 'Mutation-Create',
-                        'model_mapped': 9,
+                        'model_mapped': 8,
                         'id_record_database': 0,
                         'request_data': IPSJornada
                     }
@@ -34,7 +36,7 @@ class MutationIPSJornada:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Drop',
-                        'model_mapped': 9,
+                        'model_mapped': 8,
                         'id_record_database': id_record,
                         'request_data': "eps"
                     }
@@ -49,8 +51,9 @@ class MutationIPSJornada:
     def update_ips_jornada(self,  IPSJornada: IPSJornadaInput, id_record: int) -> str:
         try:
             request = {
-                "IPS_Jornada_ID": IPSJornada.IPS_Jornada_ID,
-                "Jornada_ID_FK": IPSJornada.Jornada_ID_FK
+                "IPS_ID_FK": IPSJornada.IPS_ID_FK,
+                "Jornada_ID_FK": IPSJornada.Jornada_ID_FK,
+                "ips_jornadacol": IPSJornada.ips_jornadacol
             }
             IPSJornada = {}
             for key, value in request.items():
@@ -63,7 +66,7 @@ class MutationIPSJornada:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Update',
-                        'model_mapped': 9,
+                        'model_mapped': 8,
                         'id_record_database': id_record,
                         'request_data': IPSJornada
                     }

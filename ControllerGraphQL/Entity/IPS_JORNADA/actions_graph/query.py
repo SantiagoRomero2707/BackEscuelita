@@ -13,7 +13,7 @@ class IPSJornadaQuery:
                 'crud_information':
                     {
                         'method_http': 'Query_Filter',
-                        'model_mapped': 10,
+                        'model_mapped': 8,
                         'id_record_database': id,
                         'request_data': "eps"
                     }
@@ -23,8 +23,9 @@ class IPSJornadaQuery:
             object_response = response.__dict__
             return IPSJornada(
                 IPS_Jornada_ID=object_response["IPS_Jornada_ID"],
-                IPS_ID=object_response["IPS_ID"],
-                Jornada_ID_FK=object_response["Jornada_ID_FK"])
+                IPS_ID_FK=object_response["IPS_ID_FK"],
+                Jornada_ID_FK=object_response["Jornada_ID_FK"],
+                ips_jornadacol=object_response["ips_jornadacol"])
         except Exception as e:
             return e
 
@@ -35,7 +36,7 @@ class IPSJornadaQuery:
                 'crud_information':
                     {
                         'method_http': 'Query',
-                        'model_mapped': 10,
+                        'model_mapped': 8,
                         'id_record_database': id,
                         'request_data': "eps"
                     }
@@ -43,7 +44,8 @@ class IPSJornadaQuery:
             instances_crud = CRUD.MethodsDatabase(**action_user)
             object_response = instances_crud.methods_graphql()
             return [IPSJornada(IPS_Jornada_ID=value.__dict__["IPS_Jornada_ID"],
-                               IPS_ID=value.__dict__["IPS_ID"],
-                               Jornada_ID_FK=value.__dict__["Jornada_ID_FK"]) for value in object_response]
+                               IPS_ID_FK=value.__dict__["IPS_ID_FK"],
+                               Jornada_ID_FK=value.__dict__["Jornada_ID_FK"],
+                               ips_jornadacol=value.__dict__["ips_jornadacol"]) for value in object_response]
         except Exception as e:
             return e

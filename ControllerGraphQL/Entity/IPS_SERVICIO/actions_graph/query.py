@@ -13,7 +13,7 @@ class IPSServicioQuery:
                 'crud_information':
                     {
                         'method_http': 'Query_Filter',
-                        'model_mapped': 10,
+                        'model_mapped': 9,
                         'id_record_database': id,
                         'request_data': "eps"
                     }
@@ -35,7 +35,7 @@ class IPSServicioQuery:
                 'crud_information':
                     {
                         'method_http': 'Query',
-                        'model_mapped': 10,
+                        'model_mapped': 9,
                         'id_record_database': id,
                         'request_data': "eps"
                     }

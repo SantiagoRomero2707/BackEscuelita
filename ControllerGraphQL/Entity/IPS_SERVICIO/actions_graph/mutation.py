@@ -17,7 +17,7 @@ class MutationIPSServicio:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Create',
-                        'model_mapped': 10,
+                        'model_mapped': 9,
                         'id_record_database': 0,
                         'request_data': IPSServicio
                     }
@@ -35,7 +35,7 @@ class MutationIPSServicio:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Drop',
-                        'model_mapped': 10,
+                        'model_mapped': 9,
                         'id_record_database': id_record,
                         'request_data': "eps"
                     }
@@ -65,7 +65,7 @@ class MutationIPSServicio:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Update',
-                        'model_mapped': 10,
+                        'model_mapped': 9,
                         'id_record_database': id_record,
                         'request_data': IPSServicio
                     }

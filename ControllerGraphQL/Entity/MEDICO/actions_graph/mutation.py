@@ -20,7 +20,7 @@ class MutationMedico:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Create',
-                        'model_mapped': 11,
+                        'model_mapped': 10,
                         'id_record_database': 0,
                         'request_data': Medico
                     }
@@ -38,7 +38,7 @@ class MutationMedico:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Drop',
-                        'model_mapped': 11,
+                        'model_mapped': 10,
                         'id_record_database': id_record,
                         'request_data': "eps"
                     }
@@ -71,7 +71,7 @@ class MutationMedico:
                 'crud_information':
                     {
                         'method_http': 'Mutation-Update',
-                        'model_mapped': 11,
+                        'model_mapped': 10,
                         'id_record_database': id_record,
                         'request_data': Medico
                     }

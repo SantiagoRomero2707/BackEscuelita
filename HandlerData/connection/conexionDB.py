@@ -17,8 +17,6 @@ class Connect(object):
     # Método de Conexión a las bases de datos
     def connecting(self):
         # INSTRUCCIÓN DE CONEXION BASE DE DATOS SQLALCHEMY
-        ## MSSQL_engine = create_engine('mssql+pyodbc://' + self.serverName + "\\" + self.instanceName + '/' +
-                                     ## self.databaseName + '?driver=SQL+Server+Native+Client+11.0')
         MYSQL_engine = create_engine('mysql+pymysql://root:12345@localhost/entidades_registradas')
         # CREA HILO DE CONEXIÓN A BASE DE DATOS SEGÚN URL ESTABLECIDA
         session_factory = sessionmaker(autocommit=False, autoflush=False, bind=MYSQL_engine)

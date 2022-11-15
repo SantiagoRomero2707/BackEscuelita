@@ -110,40 +110,19 @@ class EpsFarmacia(Model):  # 7
     def farmacia(self): return relationship('Farmacia')
 
 
-class EpsIp(Model):  # 8
-    __tablename__ = 'eps_ips'
-
-    EPS_IPS_PK = Column(String(45), primary_key=True, nullable=False)
-
-    @declared_attr
-    def EPS_ID(self):
-        return Column(ForeignKey('eps.id'), nullable=False)
-
-    @declared_attr
-    def IPS_ID_FK(self):
-        return Column(ForeignKey('ips.id'), index=True)
-
-    @declared_attr
-    def ep(self):
-        return relationship('Ep')
-
-    @declared_attr
-    def ip(self):
-        return relationship('Ip')
-
-
-class IpsJornada(Model):  # 9
+class IpsJornada(Model):  # 8
     __tablename__ = 'ips_jornada'
 
-    IPS_Jornada_ID = Column(String(45), primary_key=True, nullable=False)
-
-    @declared_attr
-    def IPS_ID(self):
-        return Column(ForeignKey('ips.id'), nullable=False)
+    IPS_Jornada_ID = Column(Integer, primary_key=True)
+    ips_jornadacol = Column(String(45))
 
     @declared_attr
     def Jornada_ID_FK(self):
         return Column(ForeignKey('jornada.id'), index=True)
+
+    @declared_attr
+    def IPS_ID_FK(self):
+        return Column(ForeignKey('ips.id'), nullable=False, index=True)
 
     @declared_attr
     def ip(self):
@@ -154,7 +133,7 @@ class IpsJornada(Model):  # 9
         return relationship('Jornada')
 
 
-class IpsServicio(Model):  # 10
+class IpsServicio(Model):  # 9
     __tablename__ = 'ips_servicio'
 
     IPS_Servicio_PK = Column(String(45), primary_key=True, nullable=False)
@@ -176,7 +155,7 @@ class IpsServicio(Model):  # 10
         return relationship('Servicio')
 
 
-class Medico(Model):  # 11
+class Medico(Model):  # 10
     __tablename__ = 'medico'
 
     id = Column(Integer, primary_key=True)
@@ -196,7 +175,7 @@ class Medico(Model):  # 11
         return relationship('Ip')
 
 
-class MedicoHorario(Model):  # 12
+class MedicoHorario(Model):  # 11
     __tablename__ = 'medico_horario'
 
     Medico_Horario_PK = Column(String(45), primary_key=True, nullable=False)

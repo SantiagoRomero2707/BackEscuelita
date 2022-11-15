@@ -13,7 +13,7 @@ class MedicoQuery:
                 'crud_information':
                     {
                         'method_http': 'Query_Filter',
-                        'model_mapped': 11,
+                        'model_mapped': 10,
                         'id_record_database': id,
                         'request_data': "eps"
                     }
@@ -41,7 +41,7 @@ class MedicoQuery:
                 'crud_information':
                     {
                         'method_http': 'Query',
-                        'model_mapped': 11,
+                        'model_mapped': 10,
                         'id_record_database': id,
                         'request_data': "eps"
                     }
